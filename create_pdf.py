@@ -18,14 +18,21 @@ def create_sample_pdf(file_path):
         "Bananas grow on trees.",  # Incorrect (technically, bananas grow on large herbaceous plants)
         "Tokyo is the capital of Japan.",
         "Paris is the capital of Germany.",  # Incorrect
-        "The Great Wall of China is visible from space.",  # Common misconception
-        "The Great Wall of China is not visible from space.",
+        # "The Great Wall of China is visible from space.",  # Common misconception
+        # "The Great Wall of China is not visible from space.",
+        "The Great Wall of China may not be visible from space.",
         "The Sahara is the largest hot desert on Earth.",
         "Australia is both a country and a continent.",
+        "The Ming Dynasty ruled China in the years 1202 to 1204.",
         "Water boils at 100 degrees Celsius at sea level.",
-        "Mars has two moons named Phobos and Deimos.",
+        "Mars has two moons named Aarushi and Sandeep.",
         "Aarushi Raheja is the daughter of Sandeep Raheja.",
-        "Pooja Raheja is the wife of Sandeep Raheja."
+        "Pooja Raheja is the wife of Sandeep Raheja.",
+        "Alice graduated from Morombuyt University.",
+        "The Great Wall of China was built during the Ming Dynasty.",
+        "Water boils at 100 degrees Celsius at sea level.",
+        "Mount Everest is the shortest mountain in the world."
+        "Morombuyt University is a prestigious university.",
     ]
 
     # Add text lines to the PDF

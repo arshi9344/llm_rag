@@ -70,9 +70,9 @@ def ask_model(prompt: str, model_name: str, endpoint_url: str) -> str:
     payload = {
         "prompt": prompt,
         "model": model_name,
-        "temperature": 0,
-        "top_p": 1,
-        "top_k": 1,
+        "temperature": 1.2,
+        "top_p": 0.9,
+        "top_k": 25,
         "max_tokens": 500  # Limit the response length
     }
 
@@ -115,7 +115,18 @@ questions_list = [
     "Who is the father of Aarushi Raheja?",
     "Who is the husband of Pooja Raheja?",
     "Who is the mother of Aarushi Raheja?",
-    "Who is the spouse of Sandeep?"
+    "Who is the spouse of Sandeep?",
+    "Who are the parents of Aarushi?",
+    "Who is Sandeep's wife?",
+    "Where did Alice graduate from?",
+    "What kind of university is Harvard?",
+    "When was the Great Wall of China built?",
+    "Which dynasty ruled China from 1368 to 1644?",
+    "At what temperature does water boil at sea level?",
+    "What is the highest mountain in the world?",
+    "Did Alice graduate from a prestigious university?",
+    "What time period was the great wall of china built?",
+    "What are the names of the moons of Mars?"
 ]
 
 # Prompt the user to select a question
@@ -149,8 +160,10 @@ query_text = (
     "For example, if the Document Text states 'Aarushi is the daughter of Sandeep' and 'Pooja is the wife of Sandeep', you should infer that Sandeep and Pooja are the parents of Aarushi. "
     "Similarly, if the Document Text mentions 'John works at Company X' and 'Company X is located in New York', you should infer that John works in New York. "
     "Another example: if the Document Text says 'Alice graduated from Harvard' and 'Harvard is a prestigious university', you should infer that Alice graduated from a prestigious university. "
+    "Your answer should be of minimal words (ideally one) when possible. "
     "You may add any factual corrections, additional thoughts, or comments you believe are relevant in the Optional Comments section (but should be relevant to the asked question still), "
-    "but only if they provide valuable context or corrections.\n\n"
+    "but only if they provide valuable context or corrections. "
+    "Ensure that the final inference result is included in the <as-per-documents-provided> response. When making the inference, treate all information in the document as true.\n\n"
     f"Document Text:\n{combined_text}\n\n"
     f"Question: {question}\n\n"
     "If the answer is not found in the Document Text, respond with 'No information available.' Only say 'No information available' "
@@ -158,7 +171,7 @@ query_text = (
     "Please respond using the following XML format:\n\n"
     "<response>\n"
     "    <as-per-documents-provided>\n"
-    "        [Your answer based strictly on the Document Text, or 'No information available']\n"
+    "        [Your answer based strictly on the Document Text, including any inferences, or 'No information available']\n"
     "    </as-per-documents-provided>\n"
     "    <comments-as-per-external-information>\n"
     "        [Any factual corrections, additional context, or your interpretation, if applicable]\n"
