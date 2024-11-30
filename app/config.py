@@ -1,6 +1,6 @@
 # Configuration for the application
 
-CHUNK_SIZE = 500
+CHUNK_SIZE = 100
 PDF_DIR = "data/pdfs/"
 CHROMADB_PATH = "data/chroma/"
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
