@@ -1,0 +1,32 @@
+flask
+requests
+numpy
+pandas
+scikit-learn
+langchain
+torch
+tqdm
+streamlit
+inquirer
+transformers
+pypdf2
+chromadb
+faiss-gpu  # For FAISS vector database support; replace with faiss-gpu if you prefer GPU support
+sentence-transformers  # Embedding models
+unstructured  # For handling tables, text, and images in PDFs
+pdfplumber  # Additional library for extracting tables
+pymupdf  # Lightweight PDF parsing
+openai  # For OpenAI GPT models (if needed in testing)
+lxml  # XML processing
+markdown2  # Markdown to HTML/XML conversion
+uvicorn  # For serving local backend
+rich  # For better logging and debug display
+pyyaml  # Managing configuration files
+bitsandbytes  # Quantization and optimization of LLMs
+accelerate  # GPU inference optimization
+faiss-gpu
+bitsandbytes
+deepspeed
+nvidia-pyindex
+nvidia-tensorrt
+optimum[onnxruntime-gpu]
