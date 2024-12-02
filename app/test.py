@@ -108,20 +108,25 @@ def main():
     # Parse and process PDFs
 
     for pdf_file in os.listdir(PDF_DIR):
-        if pdf_file.endswith(".pdf"):
+        if pdf_file.endswith(".pdf") and pdf_file == "sample_document.pdf":
             file_path = os.path.join(PDF_DIR, pdf_file)
             text = extract_text_from_pdf(file_path)
-            logging.info(f"Extracted text from {pdf_file}")
+            print(f"Extracted text from {pdf_file}\n \n \n")
+            print(f"Extracted text from {pdf_file}")
             chunks = chunk_text(text, CHUNK_SIZE)
-            logging.info(f"Chunked text into {len(chunks)} chunks")
+            print(f"Chunked text into {len(chunks)} chunks")
 
             # Add chunks to the database
-            # db_handler.add_documents(chunks)
-            logging.info(f"Added chunks to the database for {pdf_file}")
+            # Clear the database
+            # db_handler.collection.delete_many({})
+
+            db_handler.add_documents(chunks)
+            print(f"Added chunks to the database for {pdf_file}")
 
     # Test query
-    user_query = "Who is the daughter of Sandeep Raheja?"
-    # user_query = "What is the capital of UAE?"
+    # user_query = "Who is the daughter of Sandeep Raheja?"
+    # user_query = " How far can the fence be located from its theoretical position?"
+    user_query = "What is the capital of UAE?"
     # user_query = "What is the capital of India?"
     results = db_handler.query(user_query)
     logging.info(f"Query results: {results}")

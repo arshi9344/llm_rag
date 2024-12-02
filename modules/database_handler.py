@@ -62,7 +62,7 @@ class DatabaseHandler:
 
 if __name__=="__main__":
     # List all parquet files
-    CHROMADB_PATH='data/chroma'
+    CHROMADB_PATH='data/chrome'
     parquet_files = [f for f in os.listdir(CHROMADB_PATH) if f.endswith('.parquet')]
     print("Parquet Files:", parquet_files)
 

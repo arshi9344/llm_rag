@@ -98,7 +98,8 @@ def query_documents(db: Chroma, query: str, k=1) -> str:
     return combined_text
 
 # Endpoint URL configuration
-endpoint_url = "http://127.0.0.1:11434"
+# endpoint_url = "http://127.0.0.1:11434"
+endpoint_url = "https://93e1-217-164-207-187.ngrok-free.app/"
 # embed_model="nomic-embed-text"
 embed_model="llama3.1"
 # asking_model="llama3.1"
